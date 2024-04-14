@@ -1,7 +1,9 @@
 import plays from "./plays.json"
 import invoices from "./invoices.json"
+import { type Invoice } from "./@types/Invoice"
+import { type Plays } from "./@types/Plays"
 
-export const statement = (invoice: any, plays: any) => {
+export const statement = (invoice: Invoice, plays: Plays) => {
   let totalAmount = 0
   let volumeCredits = 0
   let result = `Statement for ${invoice.customer}\n`
@@ -13,7 +15,7 @@ export const statement = (invoice: any, plays: any) => {
   })
 
   for (const perf of invoice.performances) {
-    const play = plays[perf.playID]
+    const play = plays[perf.playID as keyof Plays]
     let thisAmount = 0
 
     switch (play.type) {
