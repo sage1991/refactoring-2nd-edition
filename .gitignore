@@ -1,0 +1,18 @@
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# idea
+.idea
+.vscode
+
+# mac os
+.DS_Store
+
+# dependencies
+node_modules
